@@ -1,0 +1,20 @@
+#!/bin/sh
+# EDGECMD v2 by NH Sept '07
+# spawn x remote commands concurrently.
+
+np=10
+x=1
+listfile="/opt/edgelist.txt"
+for i in `cat $listfile`
+do
+if [ $x -lt $np ]; then
+      echo "BG $x: $i - EXEC: $1 $2 $3 $4 $5 $6 $7 $8 $9"
+      ssh  $i $1 $2 $3 $4 $5 $6 $7 $8 $9 &> /opt/output.log &
+      x=`/usr/bin/expr $x + 1`
+else
+      echo "FG$x: $i - EXEC: $1 $2 $3 $4 $5 $6 $7 $8 $9"
+      ssh  $i $1 $2 $3 $4 $5 $6 $7 $8 $9 &> /opt/output.log
+      x=1
+fi
+done
+echo "Done!"
