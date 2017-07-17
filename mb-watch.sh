@@ -13,8 +13,8 @@
 ############################################################################
 
 #globals
-MBUSER=dbpu
-MBPASSWD=ChangeMe
+MBUSER=user
+MBPASSWD=apassword
 
 LOGDIR=$WSS_HOME/var/logs/mb_watch             
 
