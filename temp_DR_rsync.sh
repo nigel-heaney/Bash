@@ -10,9 +10,9 @@
 ############################################################################
 
 # Custom Variables
-EXCLUDEFILE=/data04/wss/conf/dp_DR_rsync_exclusions.txt
-SOURCEDIR=/data04/wss/xx/xxprod/
-DESTDIR=$WSSUSER@$DR_HOST:$WSS_HOME
+EXCLUDEFILE=/x/y/conf/x_DR_rsync_exclusions.txt
+SOURCEDIR=/data/wss/xx/xxprod/
+DESTDIR=$USER@$DR_HOST:$WHOME
 DESTDESCRIPTION="XX-DR"
 
 # generic variables
